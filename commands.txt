@@ -1,3 +1,134 @@
+Last login: Wed Feb 12 16:14:05 on ttys007
+(base) kushbhatia@kushs-MacBook-Pro-2 ~ % git clone https://github.com/Kush-bhatia-1/qtm350-quiz01
+Cloning into 'qtm350-quiz01'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), done.
+(base) kushbhatia@kushs-MacBook-Pro-2 ~ % cd qtm350-quiz01
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % touch commands.txt
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git checkout -b feature-update
+Switched to a new branch 'feature-update'
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % mkdir reports
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % touch reports/summary.md
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % echo "This document provides a summary of the project updates." > reports/summary.md
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git add reports
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git commit -m "Add reports directory"
+[feature-update 983182e] Add reports directory
+ 1 file changed, 1 insertion(+)
+ create mode 100644 reports/summary.md
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % touch reports/file{1..3}.txt
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % mv data/raw-data.csv data/input-data.csv
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % mkdir scripts/backup && cp scripts/*.py scripts/backup/
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % rm docs/documentation.md
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git add .
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git commit -m "Update project files"
+[feature-update 70efbfe] Update project files
+ 9 files changed, 1 deletion(-)
+ rename data/raw-data.csv => commands.txt (100%)
+ create mode 100644 data/input-data.csv
+ delete mode 100644 docs/documentation.md
+ create mode 100644 reports/file1.txt
+ create mode 100644 reports/file2.txt
+ create mode 100644 reports/file3.txt
+ create mode 100644 scripts/backup/01-setup.py
+ create mode 100644 scripts/backup/02-data-cleaning.py
+ create mode 100644 scripts/backup/03-data-modelling.py
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % touch .gitignore
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % echo "temp/" >> .gitignore
+echo "dataset0?.csv" >> .gitignore
+
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % cat .gitignore
+temp/
+dataset0?.csv
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git add .gitignore && git commit -m "Add .gitignore file"
+[feature-update beabfce] Add .gitignore file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git checkout main && git merge feature-update
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Updating 4258465..beabfce
+Fast-forward
+ .gitignore                          | 2 ++
+ data/raw-data.csv => commands.txt   | 0
+ data/input-data.csv                 | 0
+ docs/documentation.md               | 1 -
+ reports/file1.txt                   | 0
+ reports/file2.txt                   | 0
+ reports/file3.txt                   | 0
+ reports/summary.md                  | 1 +
+ scripts/backup/01-setup.py          | 0
+ scripts/backup/02-data-cleaning.py  | 0
+ scripts/backup/03-data-modelling.py | 0
+ 11 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ rename data/raw-data.csv => commands.txt (100%)
+ create mode 100644 data/input-data.csv
+ delete mode 100644 docs/documentation.md
+ create mode 100644 reports/file1.txt
+ create mode 100644 reports/file2.txt
+ create mode 100644 reports/file3.txt
+ create mode 100644 reports/summary.md
+ create mode 100644 scripts/backup/01-setup.py
+ create mode 100644 scripts/backup/02-data-cleaning.py
+ create mode 100644 scripts/backup/03-data-modelling.py
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % history | tail -n 50 >> commands.txt 
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git add commands.txt
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git commit -m "Update commands.txt with all used commands"
+[main 1945f0e] Update commands.txt with all used commands
+ 1 file changed, 16 insertions(+)
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git push origin main
+Username for 'https://github.com': Kush-bhatia-1
+Password for 'https://Kush-bhatia-1@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Kush-bhatia-1/qtm350-quiz01/'
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git push origin main
+Username for 'https://github.com': Kush-bhatia-1
+Password for 'https://Kush-bhatia-1@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Kush-bhatia-1/qtm350-quiz01/'
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git push origin main
+Username for 'https://github.com': Kush-bhatia-1
+Password for 'https://Kush-bhatia-1@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Kush-bhatia-1/qtm350-quiz01/'
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git push orgin main
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % git push origin main
+Username for 'https://github.com': kush-bhatia-1
+Password for 'https://kush-bhatia-1@github.com': 
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (15/15), 1.81 KiB | 1.81 MiB/s, done.
+Total 15 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/Kush-bhatia-1/qtm350-quiz01
+   4258465..1945f0e  main -> main
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % head command.txt
+head: command.txt: No such file or directory
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % head commands.txt
+   75  mkdir reports
+   76  touch reports/summary.md
+   77  echo "This document provides a summary of the project updates." > reports/summary.md
+   78  git add reports
+   79  git commit -m "Add reports directory"
+   80  touch reports/file{1..3}.txt
+   81  mv data/raw-data.csv data/input-data.csv
+   82  mkdir scripts/backup && cp scripts/*.py scripts/backup/
+   83  rm docs/documentation.md
+   84  git add .
+(base) kushbhatia@kushs-MacBook-Pro-2 qtm350-quiz01 % 
    75  mkdir reports
    76  touch reports/summary.md
    77  echo "This document provides a summary of the project updates." > reports/summary.md
